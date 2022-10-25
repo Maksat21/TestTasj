@@ -1,0 +1,384 @@
+{
+	"info": {
+		"_postman_id": "025012bc-b1fc-45c1-b4a6-199b86116043",
+		"name": "Test Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17276984"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"customer\",\n    \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/v1/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"auth"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Auth Success request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"customer\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/v1/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"auth"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"token\": \"RfNBxES9X9Y2ubhk6nzYxDIWs9q8n_jg\",\n    \"expired\": \"2022-11-24T08:11:31+00:00\",\n    \"expired_at\": 1669277491\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Author",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{{{TOKEN}}}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Josep Puer\",\n    \"country\": \"Paris\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/v1/author",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"author"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Author",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Josep Puer\",\n    \"country\": \"Paris\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/v1/author",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"author"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Genre",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{{{TOKEN}}}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Horror\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/v1/genre",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"genre"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Genre",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Horror\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/v1/genre",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"genre"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Book",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Search Book for Customer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "xs7zsnlSa99UirSksZUwEyklypp_xEEz",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "author_id",
+							"value": "1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/book/search?author_id=1&genre_id=2&country=KZ&publication_date=1666585997",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"book",
+						"search"
+					],
+					"query": [
+						{
+							"key": "author_id",
+							"value": "1"
+						},
+						{
+							"key": "genre_id",
+							"value": "2"
+						},
+						{
+							"key": "country",
+							"value": "KZ"
+						},
+						{
+							"key": "publication_date",
+							"value": "1666585997"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Search Book for Customer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "author_id",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/book/search?author_id=1&genre_id=2&country=KZ&publication_date=1666585997",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"book",
+								"search"
+							],
+							"query": [
+								{
+									"key": "author_id",
+									"value": "1"
+								},
+								{
+									"key": "genre_id",
+									"value": "2"
+								},
+								{
+									"key": "country",
+									"value": "KZ"
+								},
+								{
+									"key": "publication_date",
+									"value": "1666585997"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"items\": [\n        {\n            \"id\": 2,\n            \"name\": \"Dark Night\",\n            \"genres\": \"Horror,Mystic,Scy\",\n            \"author_name\": \"Mark Dakaskas\",\n            \"country\": \"Philipines\",\n            \"publication_date\": \"Oct 24, 2022, 4:33:17 AM\"\n        }\n    ],\n    \"_links\": {\n        \"self\": {\n            \"href\": \"http://localhost:8080/v1/book/search?author_id=1&genre_id=2&country=KZ&publication_date=1666585997&page=1&per-page=10\"\n        },\n        \"first\": {\n            \"href\": \"http://localhost:8080/v1/book/search?author_id=1&genre_id=2&country=KZ&publication_date=1666585997&page=1&per-page=10\"\n        },\n        \"last\": {\n            \"href\": \"http://localhost:8080/v1/book/search?author_id=1&genre_id=2&country=KZ&publication_date=1666585997&page=1&per-page=10\"\n        }\n    },\n    \"_meta\": {\n        \"totalCount\": 1,\n        \"pageCount\": 1,\n        \"currentPage\": 1,\n        \"perPage\": 10\n    }\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{{{TOKEN}}}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"value": "",
+			"type": "string"
+		}
+	]
+}
