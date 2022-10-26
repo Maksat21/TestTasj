@@ -11,6 +11,15 @@ Docker:
 - docker-compose exec app php rbac/init
 - [localhost:8000/](localhost:8000/) GET.
 
+
+## Доступы
+Админ
+login: admin
+passwd: 12345678
+
+Клиент
+login: customer
+passwd: 12345678
 ## Комментарии разработчика:
 Прикреплил Postman коллекцию
 для начала создадим автора после создания автора добавим жанр и в последнюю очередь создадим книгу
